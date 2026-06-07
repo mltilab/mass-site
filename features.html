@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — MASS</title>
+  <meta name="description" content="Agent-guided workflows, a collaborative video labeler, and the activity map — how MASS takes you from raw footage to research insight." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("mass-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="nav__brand" href="index.html">
+        <img src="assets/logo.svg" alt="" width="28" height="28" />
+        MASS
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html" class="is-active">Features</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="icon-moon">🌙</span><span class="icon-sun">☀️</span>
+        </button>
+        <a class="btn btn--primary btn--small" href="contact.html">Request a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Features</span>
+        <h1>One workflow, end to end</h1>
+        <p>
+          MASS isn't a pile of disconnected tools. The agent, the labeler, and the activity map
+          are stages of a single pipeline: describe what you're studying, capture it on the video,
+          and see the result as data you can explore and share.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- ============ ATLAS ============ -->
+      <article class="feature-row" id="atlas">
+        <div>
+          <span class="eyebrow">Agent-guided workflows</span>
+          <h2>Atlas: an AI agent that runs the workflow with you</h2>
+          <p>
+            Atlas is a conversational assistant built into MASS. Instead of clicking through menus,
+            you tell it what you're trying to do — and it does the setup, organization, and first-pass
+            analysis for you.
+          </p>
+          <ul class="checklist">
+            <li><strong>Analyzes video for you</strong> — describe the activities you care about ("students raising hands", "group discussion") and Atlas scans the footage and proposes a full annotation pass</li>
+            <li><strong>Manages your workspace</strong> — creates projects and datasets, attaches files, and keeps your study organized through plain conversation</li>
+            <li><strong>Never acts without you</strong> — anything that creates or changes data is approval-gated; Atlas proposes, you confirm</li>
+            <li><strong>Fully auditable</strong> — every action the agent takes is logged, so your methodology stays defensible</li>
+          </ul>
+        </div>
+        <figure class="feature-row__media mock" aria-label="Illustration of a conversation with the Atlas agent">
+          <div class="mock__bar">
+            <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+            <span class="mock__title">ATLAS</span>
+          </div>
+          <div class="mock__body chat">
+            <div class="chat__msg chat__msg--user">
+              Find every segment in this week's recordings where students are working in groups.
+            </div>
+            <div class="chat__msg chat__msg--agent">
+              I analyzed 12 videos in <strong>Dataset: Week 14</strong> and found 47 candidate segments
+              of group work. I'd like to create an annotation pass called <strong>"group-work"</strong>
+              so you can review them in the labeler.
+            </div>
+            <div class="chat__approval">
+              <span>Create annotation pass "group-work"?</span>
+              <button class="btn btn--primary" type="button">Approve</button>
+            </div>
+          </div>
+        </figure>
+      </article>
+
+      <!-- ============ LABELER ============ -->
+      <article class="feature-row feature-row--flip" id="labeler">
+        <div>
+          <span class="eyebrow eyebrow--alt">Annotation</span>
+          <h2>The Labeler: capture exactly what's happening</h2>
+          <p>
+            The labeler is where observation becomes data. Annotate any subject in the frame and
+            track them across the whole video — precisely, quickly, and together with your team.
+          </p>
+          <ul class="checklist">
+            <li><strong>Bounding boxes with keyframes</strong> — mark a subject at a few moments and MASS interpolates their position between them</li>
+            <li><strong>AI click-to-segment</strong> — click a subject once and get a pixel-accurate outline that tracks them through the video, refined with simple include/exclude clicks</li>
+            <li><strong>Multi-subject, multi-pass</strong> — code several students and several behavior categories in the same session, in separate organized passes</li>
+            <li><strong>True team coding</strong> — colleagues annotate the same video simultaneously; per-subject locks and automatic merging keep everyone's work intact</li>
+            <li><strong>Review workflow built in</strong> — labelers submit work for review; reviewers approve or request changes with notes, just like second-coder practice</li>
+          </ul>
+        </div>
+        <figure class="feature-row__media mock" aria-label="Illustration of the labeler: a video frame with tracked bounding boxes and a keyframe timeline">
+          <div class="mock__bar">
+            <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+            <span class="mock__title">LABELER — session_04.mp4 · pass: group-work</span>
+          </div>
+          <div class="mock__body">
+            <div class="lb-frame">
+              <div class="lb-box" style="left: 12%; top: 34%; width: 26%; height: 44%;">
+                <span class="lb-box__tag">Student A · on-task</span>
+              </div>
+              <div class="lb-box lb-box--alt" style="left: 55%; top: 28%; width: 30%; height: 52%;">
+                <span class="lb-box__tag">Student B · discussing</span>
+              </div>
+            </div>
+            <div class="lb-timeline">
+              <span class="lb-key" style="left: 10%"></span>
+              <span class="lb-key" style="left: 34%"></span>
+              <span class="lb-key" style="left: 58%"></span>
+              <span class="lb-key lb-key--alt" style="left: 22%"></span>
+              <span class="lb-key lb-key--alt" style="left: 72%"></span>
+              <span class="lb-key lb-key--alt" style="left: 90%"></span>
+            </div>
+          </div>
+        </figure>
+      </article>
+
+      <!-- ============ ACTIVITY MAP ============ -->
+      <article class="feature-row" id="activity-map">
+        <div>
+          <span class="eyebrow">Visualization</span>
+          <h2>The Activity Map: see the whole session at once</h2>
+          <p>
+            Every annotation becomes a colored segment on an interactive, frame-accurate timeline.
+            What took hours of footage to record takes seconds to read.
+          </p>
+          <ul class="checklist">
+            <li><strong>Group your view</strong> — lanes by student, by activity, or by coding pass; the same data, three perspectives</li>
+            <li><strong>Filter to the question</strong> — narrow to specific subjects, activities, or tags and the timeline updates live</li>
+            <li><strong>Linked to the video</strong> — click a segment to jump straight to that moment; the playhead tracks playback on the map</li>
+            <li><strong>Saved views &amp; sharing</strong> — save a filter-and-grouping setup as a named view, and share a read-only link with collaborators or stakeholders</li>
+            <li><strong>Notes where they belong</strong> — attach observations to specific segments instead of a separate document</li>
+          </ul>
+        </div>
+        <figure class="feature-row__media mock" aria-label="Illustration of the activity map grouped by activity">
+          <div class="mock__bar">
+            <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+            <span class="mock__title">ACTIVITY MAP — grouped by activity</span>
+          </div>
+          <div class="mock__body">
+            <div class="am-timeline">
+              <div class="am-lane">
+                <span class="am-lane__label">On-task</span>
+                <div class="am-lane__track">
+                  <span class="am-seg" style="left:4%; width:30%"></span>
+                  <span class="am-seg" style="left:44%; width:24%"></span>
+                  <span class="am-seg am-seg--soft" style="left:74%; width:20%"></span>
+                </div>
+              </div>
+              <div class="am-lane">
+                <span class="am-lane__label">Discussing</span>
+                <div class="am-lane__track">
+                  <span class="am-seg--alt am-seg" style="left:18%; width:20%"></span>
+                  <span class="am-seg--alt am-seg" style="left:60%; width:26%"></span>
+                </div>
+              </div>
+              <div class="am-lane">
+                <span class="am-lane__label">Hand raised</span>
+                <div class="am-lane__track">
+                  <span class="am-seg am-seg--soft2" style="left:12%; width:4%"></span>
+                  <span class="am-seg am-seg--soft2" style="left:38%; width:3%"></span>
+                  <span class="am-seg am-seg--soft2" style="left:52%; width:4%"></span>
+                  <span class="am-seg am-seg--soft2" style="left:84%; width:3%"></span>
+                </div>
+              </div>
+              <div class="am-lane">
+                <span class="am-lane__label">Off-task</span>
+                <div class="am-lane__track">
+                  <span class="am-seg am-seg--soft" style="left:34%; width:8%"></span>
+                  <span class="am-seg am-seg--soft" style="left:70%; width:6%"></span>
+                </div>
+              </div>
+              <span class="am-playhead" aria-hidden="true"></span>
+            </div>
+            <div class="am-axis"><span>00:00</span><span>15:00</span><span>30:00</span><span>45:00</span></div>
+          </div>
+        </figure>
+      </article>
+
+      <!-- ============ COLLABORATION & FOUNDATION ============ -->
+      <article class="feature-row feature-row--flip" id="collaboration">
+        <div>
+          <span class="eyebrow eyebrow--alt">Teamwork &amp; trust</span>
+          <h2>Built for teams — and for rigor</h2>
+          <p>
+            Research coding is a team sport, and methodology matters. MASS treats both as
+            first-class concerns rather than afterthoughts.
+          </p>
+          <ul class="checklist">
+            <li><strong>Roles that match your team</strong> — Viewers, Editors, Reviewers, and Managers per dataset; invite collaborators with exactly the access they need</li>
+            <li><strong>Conflict-free co-editing</strong> — subject-level locks mean two coders never silently overwrite each other; everyone's edits merge in real time</li>
+            <li><strong>Checkpointed history</strong> — committing annotations snapshots a revision while leaving the draft open, so you always know which version a finding came from</li>
+            <li><strong>Notifications that keep work moving</strong> — reviewers and labelers are notified in-app and by email when something needs their attention</li>
+            <li><strong>Secure by design</strong> — scoped authentication, per-resource permission checks, and audited AI actions throughout the platform</li>
+          </ul>
+        </div>
+        <div class="feature-row__media">
+          <div class="grid" style="gap: 16px;">
+            <div class="card">
+              <h3 style="margin-top: 0;">📤 Submit</h3>
+              <p>A labeler finishes a pass and marks it ready for review.</p>
+            </div>
+            <div class="card">
+              <h3 style="margin-top: 0;">🔍 Review</h3>
+              <p>The assigned reviewer inspects the work and requests changes — with a reason the labeler sees in context.</p>
+            </div>
+            <div class="card">
+              <h3 style="margin-top: 0;">✅ Approve</h3>
+              <p>Approval commits the annotations as a checkpointed revision, ready for analysis.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-band">
+      <div class="container">
+        <h2>Want a walkthrough?</h2>
+        <p>We'll demo the full pipeline — agent, labeler, activity map — on footage like yours.</p>
+        <a class="btn btn--primary" href="contact.html">Request a demo</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> MASS Platform</span>
+      <nav>
+        <a href="features.html">Features</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

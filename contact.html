@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — MASS</title>
+  <meta name="description" content="Request a demo of MASS or join the early-access program for research teams analyzing video." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("mass-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="nav__brand" href="index.html">
+        <img src="assets/logo.svg" alt="" width="28" height="28" />
+        MASS
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="contact.html" class="is-active">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="icon-moon">🌙</span><span class="icon-sun">☀️</span>
+        </button>
+        <a class="btn btn--primary btn--small" href="contact.html">Request a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h1>Let's talk about your study</h1>
+        <p>
+          We're partnering with early research teams now. Tell us what you're working on
+          and we'll set up a walkthrough on footage like yours.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container contact-grid">
+
+        <div>
+          <h2>What to expect</h2>
+          <ul class="checklist">
+            <li><strong>A real demo, not a slide deck</strong> — we'll walk the full pipeline: agent-guided setup, annotation in the labeler, and your data on the activity map</li>
+            <li><strong>Honest fit assessment</strong> — if MASS isn't right for your study design, we'll say so</li>
+            <li><strong>Early-partner input</strong> — our roadmap is shaped by the research teams using the platform; early partners get a direct line</li>
+          </ul>
+
+          <h3 style="margin-top: 36px;">Good questions to bring</h3>
+          <ul class="checklist">
+            <li>What does your footage look like — classroom, lab, field?</li>
+            <li>What behaviors or activities do you code today, and how long does it take?</li>
+            <li>How many coders are on your team, and how do you handle agreement?</li>
+          </ul>
+        </div>
+
+        <form class="form" id="contact-form">
+          <h3 style="margin: 0;">Request a demo</h3>
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Dr. Jane Rivera" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@university.edu" required />
+          </label>
+          <label>
+            Organization
+            <input type="text" name="organization" placeholder="University, school, district, lab…" />
+          </label>
+          <label>
+            What best describes you?
+            <select name="role">
+              <option>Education researcher</option>
+              <option>Research team / lab</option>
+              <option>School or district</option>
+              <option>Graduate student</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            Tell us about your study
+            <textarea name="message" placeholder="What are you recording, what are you trying to learn, and what does analysis look like for you today?"></textarea>
+          </label>
+          <button class="btn btn--primary" type="submit">Send request</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> MASS Platform</span>
+      <nav>
+        <a href="features.html">Features</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MASS — See how learning happens</title>
+  <meta name="description" content="MASS turns hours of observational video into structured, shareable research insight. Agent-guided workflows, collaborative annotation, and visual activity analysis — built for education researchers." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Set theme before first paint to avoid a flash of the wrong mode.
+    (function () {
+      try {
+        var t = localStorage.getItem("mass-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="nav__brand" href="index.html">
+        <img src="assets/logo.svg" alt="" width="28" height="28" />
+        MASS
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav__links">
+        <li><a href="index.html" class="is-active">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="icon-moon">🌙</span><span class="icon-sun">☀️</span>
+        </button>
+        <a class="btn btn--primary btn--small" href="contact.html">Request a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__copy">
+          <span class="eyebrow">Video analysis for research</span>
+          <h1>See how learning happens.</h1>
+          <p class="lead">
+            MASS turns hours of observational video into structured, shareable insight.
+            An AI agent guides your analysis, a collaborative labeler captures what's
+            happening on screen, and the activity map makes patterns visible at a glance.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="contact.html">Request a demo</a>
+            <a class="btn btn--outline" href="features.html">Explore the features</a>
+          </div>
+          <p class="hero__note">Built for education researchers. Ready for any video-based activity analysis.</p>
+        </div>
+
+        <!-- Activity-map mockup -->
+        <figure class="mock" aria-label="Illustration of the MASS activity map: per-student timelines with color-coded activity segments">
+          <div class="mock__bar">
+            <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+            <span class="mock__title">ACTIVITY MAP — Classroom Session 04</span>
+          </div>
+          <div class="mock__body">
+            <div class="am-timeline">
+              <div class="am-lane">
+                <span class="am-lane__label">Student A</span>
+                <div class="am-lane__track">
+                  <span class="am-seg" style="left:4%; width:22%"></span>
+                  <span class="am-seg--alt am-seg" style="left:30%; width:14%"></span>
+                  <span class="am-seg am-seg--soft" style="left:50%; width:30%"></span>
+                </div>
+              </div>
+              <div class="am-lane">
+                <span class="am-lane__label">Student B</span>
+                <div class="am-lane__track">
+                  <span class="am-seg am-seg--soft" style="left:8%; width:16%"></span>
+                  <span class="am-seg" style="left:28%; width:34%"></span>
+                  <span class="am-seg--alt am-seg" style="left:68%; width:18%"></span>
+                </div>
+              </div>
+              <div class="am-lane">
+                <span class="am-lane__label">Student C</span>
+                <div class="am-lane__track">
+                  <span class="am-seg--alt am-seg" style="left:6%; width:10%"></span>
+                  <span class="am-seg am-seg--soft2" style="left:22%; width:26%"></span>
+                  <span class="am-seg" style="left:54%; width:32%"></span>
+                </div>
+              </div>
+              <div class="am-lane">
+                <span class="am-lane__label">Group work</span>
+                <div class="am-lane__track">
+                  <span class="am-seg" style="left:30%; width:42%"></span>
+                </div>
+              </div>
+              <span class="am-playhead" aria-hidden="true"></span>
+            </div>
+            <div class="am-axis"><span>00:00</span><span>10:00</span><span>20:00</span><span>30:00</span></div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section>
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">How it works</span>
+          <h2>From raw footage to research insight</h2>
+          <p class="muted">Three steps — and an AI agent helping at every one of them.</p>
+        </div>
+        <div class="grid grid--3">
+          <div class="step reveal">
+            <div class="step__num">01</div>
+            <h3>Upload &amp; organize</h3>
+            <p>Bring in classroom recordings, lab sessions, or field footage. Organize them into projects and datasets — or just tell the agent what you have and let it set things up.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__num">02</div>
+            <h3>Annotate with AI assistance</h3>
+            <p>Ask the agent to scan videos for the activities you care about, then refine its suggestions in the labeler — bounding boxes, subject tracking, and click-to-segment masks.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__num">03</div>
+            <h3>Visualize &amp; share</h3>
+            <p>The activity map lays every coded moment on an interactive timeline. Filter, group, compare — then share a live view with collaborators or stakeholders via a link.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THREE PILLARS ============ -->
+    <section style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The platform</span>
+          <h2>Three tools, one workflow</h2>
+        </div>
+        <div class="grid grid--3">
+          <a class="card-wrap reveal" href="features.html#atlas">
+            <div class="card card--link">
+              <span class="card__icon">✦</span>
+              <h3>Atlas, your research agent</h3>
+              <p>A conversational AI that guides your whole workflow — it organizes datasets, analyzes video for the activities you describe, and proposes annotations for your approval. You stay in control; it does the legwork.</p>
+            </div>
+          </a>
+          <a class="card-wrap reveal" href="features.html#labeler">
+            <div class="card card--link">
+              <span class="card__icon card__icon--alt">▣</span>
+              <h3>The Labeler</h3>
+              <p>Frame-accurate video annotation: bounding boxes with keyframe interpolation, AI click-to-segment masks, and multi-subject tracking. Whole teams can code the same video at once without stepping on each other.</p>
+            </div>
+          </a>
+          <a class="card-wrap reveal" href="features.html#activity-map">
+            <div class="card card--link">
+              <span class="card__icon">☰</span>
+              <h3>The Activity Map</h3>
+              <p>Every annotation becomes a segment on an interactive timeline. Group by student, by activity, or by coding pass. Save views, filter to what matters, and share read-only links with anyone.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION FOCUS ============ -->
+    <section class="strip">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--alt">Built for education research</span>
+          <h2>Understand what's really happening in the classroom</h2>
+          <p class="muted">
+            Observational video is the richest data education researchers have — and the most
+            time-consuming to analyze. MASS was designed to close that gap: code student behavior
+            systematically, keep your team consistent, and surface the patterns that field notes miss.
+          </p>
+        </div>
+        <div class="grid grid--2">
+          <ul class="checklist">
+            <li>Track individual students across a session — engagement, time-on-task, collaboration</li>
+            <li>Code group work, teacher-student interaction, and transitions between activities</li>
+            <li>Built-in review workflow mirrors second-coder practice: submit, request changes, approve</li>
+          </ul>
+          <ul class="checklist">
+            <li>AI-suggested annotations accelerate coding without removing the researcher from the loop</li>
+            <li>Compare across sessions, classrooms, and conditions on a single visual timeline</li>
+            <li>Share findings as interactive views — not static screenshots in a slide deck</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BEYOND EDUCATION TEASER ============ -->
+    <section>
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Not just classrooms</span>
+          <h2>Anywhere activity happens on video</h2>
+          <p class="muted">
+            The same workflow — annotate, track, visualize — applies to any research question
+            you can point a camera at: usability studies, behavioral observation, sports analysis,
+            workplace studies, and more.
+          </p>
+          <a class="btn btn--outline" href="use-cases.html">See the use cases</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <section class="strip" style="padding: 40px 0;">
+      <div class="container grid grid--3">
+        <div class="strip-item">
+          <span class="strip-item__icon">🤝</span>
+          <div><strong>Real-time collaboration</strong><span>Multiple coders on one video — conflict-free, with per-subject editing locks.</span></div>
+        </div>
+        <div class="strip-item">
+          <span class="strip-item__icon">✅</span>
+          <div><strong>Review &amp; approval built in</strong><span>Every annotation set moves through a clear submit → review → approve cycle.</span></div>
+        </div>
+        <div class="strip-item">
+          <span class="strip-item__icon">🔒</span>
+          <div><strong>You approve every AI action</strong><span>The agent proposes; the researcher decides. Sensitive actions are gated and audited.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-band">
+      <div class="container">
+        <h2>Ready to see your data differently?</h2>
+        <p>We're working with early research partners now. Tell us about your study and we'll show you MASS on your kind of footage.</p>
+        <a class="btn btn--primary" href="contact.html">Get in touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> MASS Platform</span>
+      <nav>
+        <a href="features.html">Features</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
