@@ -598,8 +598,27 @@ a.card-wrap:hover { text-decoration: none; }
   border-radius: var(--radius-lg);
   padding: 26px;
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
+.uc-card:hover { transform: translateY(-4px); border-color: var(--accent); }
 .uc-card h3 { display: flex; align-items: center; gap: 10px; }
+.uc-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--accent-dim);
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.uc-icon--alt { background: var(--accent2-dim); color: var(--accent2); }
+.uc-card:hover .uc-icon { background: var(--accent); color: #ffffff; }
+.uc-card:hover .uc-icon--alt { background: var(--accent2); }
+@media (prefers-reduced-motion: reduce) {
+  .uc-card, .uc-card:hover { transform: none; transition: none; }
+}
 .uc-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
 
 .uc-primary {
