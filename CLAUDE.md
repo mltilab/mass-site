@@ -18,7 +18,7 @@ Supporting facts usable in copy: dataset roles (Viewer/Editor/Reviewer/Manager),
 
 **Copy tone — never frame MASS as monitoring or surveilling students.** Avoid phrasing like "track each student", "quantify when they're focused/distracted", or judgmental coding labels ("off-task") in marketing copy and mockups. Frame everything as understanding participation and learning. (Describing the labeler's technical subject-tracking is fine; aiming that language at students is not.)
 
-Brand: **"MASS" is the product name, not an acronym** (no expansion exists). Tagline *"See how learning happens."* is a draft — fine to iterate. Positioning order: education research first, "beyond education" second.
+Brand: **MASS stands for "Multimodal Analytics Support Studio"** — the full name appears under the wordmark in the header (hidden on mobile) and in the footer copyright line. Tagline *"See how learning happens."* is a draft — fine to iterate. Positioning order: education research first, "beyond education" second.
 
 ## Files
 
