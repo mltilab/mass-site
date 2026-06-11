@@ -7,7 +7,7 @@ Static informational/marketing site for the MASS platform. **Completely separate
 | File | Purpose |
 |---|---|
 | `index.html` | Landing page — tagline, how-it-works, three feature pillars, education-research positioning |
-| `features.html` | Deep dives: Atlas agent, Labeler, Activity Map, collaboration & review |
+| `features.html` | Deep dives: Atlas agent, Labeler, Participation Map, collaboration & review |
 | `use-cases.html` | Education research (primary), audiences (teams/schools/labs), beyond-education use cases |
 | `contact.html` | Demo / early-access request (form is a front-end stub — no backend yet) |
 
@@ -15,7 +15,7 @@ Static informational/marketing site for the MASS platform. **Completely separate
 
 - `css/styles.css` — all styles. Design tokens mirror the app theme (`mass-frontend/src/theme/theme.ts`): accent blue `#2196f3`, accent magenta `#f32196`, Poppins headings, Inter body, light `#fafafa` / dark `#242424`.
 - `js/main.js` — theme toggle (persisted to `localStorage`, defaults to system preference), mobile nav, reveal-on-scroll, contact-form stub.
-- `assets/logo.svg` — placeholder mark (activity-map lanes motif). Replace when real branding exists.
+- `assets/logo.svg` — placeholder mark (participation-map lanes motif). Replace when real branding exists.
 - Product "screenshots" are pure-CSS mockups (`.mock` figures) — swap for real screenshots when the app UI is ready to show.
 
 ## Run locally

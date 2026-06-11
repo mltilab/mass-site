@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Features — MASS</title>
-  <meta name="description" content="Agent-guided workflows, a collaborative video labeler, and the activity map — how MASS takes you from raw footage to research insight." />
+  <meta name="description" content="Agent-guided workflows, a collaborative video labeler, and the participation map: how MASS takes you from raw footage to research insight." />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <script>
     (function () {
@@ -37,7 +37,7 @@
       </ul>
       <div class="nav__actions">
         <button class="theme-toggle" aria-label="Toggle dark mode">
-          <span class="icon-moon">🌙</span><span class="icon-sun">☀️</span>
+          <span class="icon-moon"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><span class="icon-sun"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
         </button>
         <a class="btn btn--primary btn--small" href="contact.html">Request a demo</a>
       </div>
@@ -51,7 +51,7 @@
         <span class="eyebrow">Features</span>
         <h1>One workflow, end to end</h1>
         <p>
-          MASS isn't a pile of disconnected tools. The agent, the labeler, and the activity map
+          MASS isn't a pile of disconnected tools. The agent, the labeler, and the participation map
           are stages of a single pipeline: describe what you're studying, capture it on the video,
           and see the result as data you can explore and share.
         </p>
@@ -67,14 +67,14 @@
           <h2>Atlas: an AI agent that runs the workflow with you</h2>
           <p>
             Atlas is a conversational assistant built into MASS. Instead of clicking through menus,
-            you tell it what you're trying to do — and it does the setup, organization, and first-pass
+            you tell it what you're trying to do, and it does the setup, organization, and first-pass
             analysis for you.
           </p>
           <ul class="checklist">
-            <li><strong>Analyzes video for you</strong> — describe the activities you care about ("students raising hands", "group discussion") and Atlas scans the footage and proposes a full annotation pass</li>
-            <li><strong>Manages your workspace</strong> — creates projects and datasets, attaches files, and keeps your study organized through plain conversation</li>
-            <li><strong>Never acts without you</strong> — anything that creates or changes data is approval-gated; Atlas proposes, you confirm</li>
-            <li><strong>Fully auditable</strong> — every action the agent takes is logged, so your methodology stays defensible</li>
+            <li><strong>Analyzes video for you</strong>: describe the activities you care about ("students raising hands", "group discussion") and Atlas scans the footage and proposes a full annotation pass</li>
+            <li><strong>Manages your workspace</strong>: creates projects and datasets, attaches files, and keeps your study organized through plain conversation</li>
+            <li><strong>Never acts without you</strong>: anything that creates or changes data is approval-gated; Atlas proposes, you confirm</li>
+            <li><strong>Fully auditable</strong>: every action the agent takes is logged, so your methodology stays defensible</li>
           </ul>
         </div>
         <figure class="feature-row__media mock" aria-label="Illustration of a conversation with the Atlas agent">
@@ -106,14 +106,14 @@
           <h2>The Labeler: capture exactly what's happening</h2>
           <p>
             The labeler is where observation becomes data. Annotate any subject in the frame and
-            track them across the whole video — precisely, quickly, and together with your team.
+            track them across the whole video: precisely, quickly, and together with your team.
           </p>
           <ul class="checklist">
-            <li><strong>Bounding boxes with keyframes</strong> — mark a subject at a few moments and MASS interpolates their position between them</li>
-            <li><strong>AI click-to-segment</strong> — click a subject once and get a pixel-accurate outline that tracks them through the video, refined with simple include/exclude clicks</li>
-            <li><strong>Multi-subject, multi-pass</strong> — code several students and several behavior categories in the same session, in separate organized passes</li>
-            <li><strong>True team coding</strong> — colleagues annotate the same video simultaneously; per-subject locks and automatic merging keep everyone's work intact</li>
-            <li><strong>Review workflow built in</strong> — labelers submit work for review; reviewers approve or request changes with notes, just like second-coder practice</li>
+            <li><strong>Bounding boxes with keyframes</strong>: mark a subject at a few moments and MASS interpolates their position between them</li>
+            <li><strong>AI click-to-segment</strong>: click a subject once and get a pixel-accurate outline that tracks them through the video, refined with simple include/exclude clicks</li>
+            <li><strong>Multi-subject, multi-pass</strong>: code several students and several behavior categories in the same session, in separate organized passes</li>
+            <li><strong>True team coding</strong>: colleagues annotate the same video simultaneously; per-subject locks and automatic merging keep everyone's work intact</li>
+            <li><strong>Review workflow built in</strong>: labelers submit work for review; reviewers approve or request changes with notes, just like second-coder practice</li>
           </ul>
         </div>
         <figure class="feature-row__media mock" aria-label="Illustration of the labeler: a video frame with tracked bounding boxes and a keyframe timeline">
@@ -142,27 +142,27 @@
         </figure>
       </article>
 
-      <!-- ============ ACTIVITY MAP ============ -->
-      <article class="feature-row" id="activity-map">
+      <!-- ============ PARTICIPATION MAP ============ -->
+      <article class="feature-row" id="participation-map">
         <div>
           <span class="eyebrow">Visualization</span>
-          <h2>The Activity Map: see the whole session at once</h2>
+          <h2>The Participation Map: see the whole session at once</h2>
           <p>
             Every annotation becomes a colored segment on an interactive, frame-accurate timeline.
             What took hours of footage to record takes seconds to read.
           </p>
           <ul class="checklist">
-            <li><strong>Group your view</strong> — lanes by student, by activity, or by coding pass; the same data, three perspectives</li>
-            <li><strong>Filter to the question</strong> — narrow to specific subjects, activities, or tags and the timeline updates live</li>
-            <li><strong>Linked to the video</strong> — click a segment to jump straight to that moment; the playhead tracks playback on the map</li>
-            <li><strong>Saved views &amp; sharing</strong> — save a filter-and-grouping setup as a named view, and share a read-only link with collaborators or stakeholders</li>
-            <li><strong>Notes where they belong</strong> — attach observations to specific segments instead of a separate document</li>
+            <li><strong>Group your view</strong>: lanes by student, by activity, or by coding pass; the same data, three perspectives</li>
+            <li><strong>Filter to the question</strong>: narrow to specific subjects, activities, or tags and the timeline updates live</li>
+            <li><strong>Linked to the video</strong>: click a segment to jump straight to that moment; the playhead tracks playback on the map</li>
+            <li><strong>Saved views &amp; sharing</strong>: save a filter-and-grouping setup as a named view, and share a read-only link with collaborators or stakeholders</li>
+            <li><strong>Notes where they belong</strong>: attach observations to specific segments instead of a separate document</li>
           </ul>
         </div>
-        <figure class="feature-row__media mock" aria-label="Illustration of the activity map grouped by activity">
+        <figure class="feature-row__media mock" aria-label="Illustration of the participation map grouped by activity">
           <div class="mock__bar">
             <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
-            <span class="mock__title">ACTIVITY MAP — grouped by activity</span>
+            <span class="mock__title">PARTICIPATION MAP — grouped by activity</span>
           </div>
           <div class="mock__body">
             <div class="am-timeline">
@@ -208,31 +208,31 @@
       <article class="feature-row feature-row--flip" id="collaboration">
         <div>
           <span class="eyebrow eyebrow--alt">Teamwork &amp; trust</span>
-          <h2>Built for teams — and for rigor</h2>
+          <h2>Built for teams and for rigor</h2>
           <p>
             Research coding is a team sport, and methodology matters. MASS treats both as
             first-class concerns rather than afterthoughts.
           </p>
           <ul class="checklist">
-            <li><strong>Roles that match your team</strong> — Viewers, Editors, Reviewers, and Managers per dataset; invite collaborators with exactly the access they need</li>
-            <li><strong>Conflict-free co-editing</strong> — subject-level locks mean two coders never silently overwrite each other; everyone's edits merge in real time</li>
-            <li><strong>Checkpointed history</strong> — committing annotations snapshots a revision while leaving the draft open, so you always know which version a finding came from</li>
-            <li><strong>Notifications that keep work moving</strong> — reviewers and labelers are notified in-app and by email when something needs their attention</li>
-            <li><strong>Secure by design</strong> — scoped authentication, per-resource permission checks, and audited AI actions throughout the platform</li>
+            <li><strong>Roles that match your team</strong>: Viewers, Editors, Reviewers, and Managers per dataset; invite collaborators with exactly the access they need</li>
+            <li><strong>Conflict-free co-editing</strong>: subject-level locks mean two coders never silently overwrite each other; everyone's edits merge in real time</li>
+            <li><strong>Checkpointed history</strong>: committing annotations snapshots a revision while leaving the draft open, so you always know which version a finding came from</li>
+            <li><strong>Notifications that keep work moving</strong>: reviewers and labelers are notified in-app and by email when something needs their attention</li>
+            <li><strong>Secure by design</strong>: scoped authentication, per-resource permission checks, and audited AI actions throughout the platform</li>
           </ul>
         </div>
         <div class="feature-row__media">
           <div class="grid" style="gap: 16px;">
             <div class="card">
-              <h3 style="margin-top: 0;">📤 Submit</h3>
+              <h3 style="margin-top: 0;">Submit</h3>
               <p>A labeler finishes a pass and marks it ready for review.</p>
             </div>
             <div class="card">
-              <h3 style="margin-top: 0;">🔍 Review</h3>
-              <p>The assigned reviewer inspects the work and requests changes — with a reason the labeler sees in context.</p>
+              <h3 style="margin-top: 0;">Review</h3>
+              <p>The assigned reviewer inspects the work and requests changes, with a reason the labeler sees in context.</p>
             </div>
             <div class="card">
-              <h3 style="margin-top: 0;">✅ Approve</h3>
+              <h3 style="margin-top: 0;">Approve</h3>
               <p>Approval commits the annotations as a checkpointed revision, ready for analysis.</p>
             </div>
           </div>
@@ -245,7 +245,7 @@
     <section class="cta-band">
       <div class="container">
         <h2>Want a walkthrough?</h2>
-        <p>We'll demo the full pipeline — agent, labeler, activity map — on footage like yours.</p>
+        <p>We'll demo the full pipeline — agent, labeler, participation map — on footage like yours.</p>
         <a class="btn btn--primary" href="contact.html">Request a demo</a>
       </div>
     </section>

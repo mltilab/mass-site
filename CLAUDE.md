@@ -12,7 +12,7 @@ The three product pillars — keep marketing copy grounded in these real capabil
 
 1. **Atlas (AI agent)** — conversational agent that guides the workflow: organizes projects/datasets/files, and analyzes video to *propose* annotation passes for activities the user describes. **Every consequential action is approval-gated** (agent proposes, user confirms) and **audit-logged**. This human-in-the-loop framing is a core selling point for researchers — preserve it; never describe Atlas as fully autonomous.
 2. **The Labeler** — frame-accurate video annotation: bounding boxes with keyframe interpolation, AI click-to-segment masks (include/exclude refinement clicks, tracks subjects through video), multi-subject + multi-pass coding. **Collaborative**: multiple coders on one video with per-subject locks and automatic merging. **Review workflow built in**: submit → review (request changes with notes) → approve/commit as a checkpointed revision. Marketing angle: maps to second-coder / inter-rater practice.
-3. **The Activity Map** — annotations rendered as colored segments on interactive multi-lane timelines. Group lanes by student/subject, by activity, or by coding pass; filter by subject/activity/tags; click a segment to jump to that video moment; **saved views** and **shareable read-only links**; notes attached to segments.
+3. **The Participation Map** — annotations rendered as colored segments on interactive multi-lane timelines. Group lanes by student/subject, by activity, or by coding pass; filter by subject/activity/tags; click a segment to jump to that video moment; **saved views** and **shareable read-only links**; notes attached to segments.
 
 Supporting facts usable in copy: dataset roles (Viewer/Editor/Reviewer/Manager), email + in-app notifications for review handoffs, scoped auth + per-resource permissions.
 
@@ -23,12 +23,12 @@ Brand: **"MASS" is the product name, not an acronym** (no expansion exists). Tag
 | File | Purpose |
 |---|---|
 | `index.html` | Landing — hero + tagline, how-it-works (3 steps), three pillar cards, education strip, trust strip, CTA |
-| `features.html` | Pillar deep dives — anchors `#atlas`, `#labeler`, `#activity-map`, `#collaboration` (linked from index cards) |
+| `features.html` | Pillar deep dives — anchors `#atlas`, `#labeler`, `#participation-map`, `#collaboration` (linked from index cards) |
 | `use-cases.html` | Education research (primary) → audience cards (teams/schools/labs) → beyond-education grid |
 | `contact.html` | Demo request form — **front-end stub**, `#contact-form` submit is intercepted in JS, no backend |
 | `css/styles.css` | All styles, one file |
 | `js/main.js` | Theme toggle, mobile nav, reveal-on-scroll, form stub, footer year |
-| `assets/logo.svg` | Placeholder mark (activity-map lanes motif) — also the favicon |
+| `assets/logo.svg` | Placeholder mark (participation-map lanes motif) — also the favicon |
 
 ## Conventions (follow these when editing)
 
@@ -36,7 +36,7 @@ Brand: **"MASS" is the product name, not an acronym** (no expansion exists). Tag
 
 - Accents: blue `#2196f3` (`--accent`, dim `#c0e4ff` light / `#1e3a4c` dark) and magenta `#f32196` (`--accent2`, dim `#ffc0e4` / `#4c1e38`)
 - Surfaces: light `#fafafa` bg / `#ffffff` paper; dark `#242424` bg / `#1a1a1a` paper
-- Fonts: **Poppins** headings, **Inter** body (Google Fonts `<link>` in each page head)
+- Fonts: **Poppins** headings, **Inter** body, **Chakra Petch** for the MASS wordmark in the header (Google Fonts `<link>` in each page head)
 - Radii 4/8/12px. **Never hardcode colors in markup or new rules — use the variables.** Dark mode works by `[data-theme="dark"]` overriding the variables, so any hardcoded hex breaks one of the two modes.
 
 **Theme toggle** — `data-theme` on `<html>`, persisted to `localStorage` key `mass-theme`, defaults to `prefers-color-scheme`. Each page has an **inline script in `<head>`** setting the attribute before first paint (FOUC guard). If you add a page, copy that script verbatim.
@@ -45,7 +45,7 @@ Brand: **"MASS" is the product name, not an acronym** (no expansion exists). Tag
 
 **Buttons**: `.btn--primary` (accent fill, white text) for the one primary action per view; `.btn--outline` (accent border/text) for secondary. Mirrors the app's button rules.
 
-**Product mockups are pure CSS** (`.mock` figures) because no real screenshots exist yet: `.am-*` = activity-map timelines (positioned `.am-seg` spans, animated `.am-playhead`), `.lb-*` = labeler frame (bounding boxes + keyframe diamonds), `.chat__*` = Atlas conversation incl. the `.chat__approval` gate chip. Keep mockup content consistent with the real product (e.g. the approval chip exists because the agent really gates actions). Replace with real screenshots when available — keep `aria-label`s on the figures.
+**Product mockups are pure CSS** (`.mock` figures) because no real screenshots exist yet: `.am-*` = participation-map timelines (positioned `.am-seg` spans, animated `.am-playhead`), `.lb-*` = labeler frame (bounding boxes + keyframe diamonds), `.chat__*` = Atlas conversation incl. the `.chat__approval` gate chip. Keep mockup content consistent with the real product (e.g. the approval chip exists because the agent really gates actions). Replace with real screenshots when available — keep `aria-label`s on the figures.
 
 **Misc**: `.reveal` elements fade in via IntersectionObserver (auto-visible if unsupported / reduced-motion). Responsive breakpoints: 900px (grids collapse to 1–2 cols) and 640px (hamburger nav, single column). Honor `prefers-reduced-motion` for any new animation.
 
