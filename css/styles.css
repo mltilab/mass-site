@@ -808,6 +808,16 @@ a.card-wrap:hover { text-decoration: none; }
   opacity: 0.85;
   max-width: 760px;
 }
+.site-footer__note a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-underline-offset: 2px;
+}
+.site-footer__note a:hover {
+  color: var(--text);
+  text-decoration-color: currentColor;
+}
 
 /* ---------- responsive ---------- */
 
