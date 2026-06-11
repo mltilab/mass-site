@@ -14,7 +14,7 @@
     (function () {
       try {
         var t = localStorage.getItem("mass-theme");
-        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (!t) t = "light";
         document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
     })();
@@ -33,6 +33,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="features.html">Features</a></li>
         <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a></li>
         <li><a href="contact.html" class="is-active">Contact</a></li>
       </ul>
       <div class="nav__actions">
@@ -63,9 +64,9 @@
         <div>
           <h2>What to expect</h2>
           <ul class="checklist">
-            <li><strong>A real demo, not a slide deck</strong>: we'll walk the full pipeline of agent-guided setup, annotation in the labeler, and your data on the participation map</li>
-            <li><strong>Honest fit assessment</strong>: if MASS isn't right for your study design, we'll say so</li>
-            <li><strong>Early-partner input</strong>: our roadmap is shaped by the research teams using the platform; early partners get a direct line</li>
+            <li><strong>A real demo, not a slide deck</strong>: We'll walk the full pipeline of agent-guided setup, annotation in the labeler, and your data on the participation map</li>
+            <li><strong>Honest fit assessment</strong>: If MASS isn't right for your study design, we'll say so</li>
+            <li><strong>Early-partner input</strong>: Our roadmap is shaped by the research teams using the platform; early partners get a direct line</li>
           </ul>
 
           <h3 style="margin-top: 36px;">Good questions to bring</h3>
@@ -74,6 +75,9 @@
             <li>What behaviors or activities do you code today, and how long does it take?</li>
             <li>How many coders are on your team, and how do you handle agreement?</li>
           </ul>
+
+          <h3 style="margin-top: 36px;">Prefer email?</h3>
+          <p class="muted">Reach the team directly at <a href="mailto:mlti.lab25@gmail.com">mlti.lab25@gmail.com</a>.</p>
         </div>
 
         <form class="form" id="contact-form">
@@ -119,8 +123,10 @@
       <nav>
         <a href="features.html">Features</a>
         <a href="use-cases.html">Use Cases</a>
+        <a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <p class="site-footer__note">This work is supported by the UVA School of Education and Human Development IDEAs Awards through the project “Multimodal STEM+AI Classrooms: A Sociocultural Inquiry into Participatory Design for Collaborative Learning” (PI Hakeoung Hannah Lee, University of Virginia).</p>
     </div>
   </footer>
 

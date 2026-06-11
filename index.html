@@ -15,7 +15,7 @@
     (function () {
       try {
         var t = localStorage.getItem("mass-theme");
-        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (!t) t = "light";
         document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
     })();
@@ -34,6 +34,7 @@
         <li><a href="index.html" class="is-active">Home</a></li>
         <li><a href="features.html">Features</a></li>
         <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav__actions">
@@ -52,7 +53,7 @@
       <div class="container">
         <div class="hero__copy">
           <span class="eyebrow">Video analysis for research</span>
-          <h1>See how learning happens.</h1>
+          <h1>See how <span class="grad-text">learning happens</span>.</h1>
           <p class="lead">
             MASS turns hours of observational video into structured, shareable insight.
             An AI agent guides your analysis, a collaborative labeler captures what's
@@ -65,49 +66,106 @@
           <p class="hero__note">Built for education researchers. Ready for any video-based activity analysis.</p>
         </div>
 
-        <!-- Participation-map mockup -->
-        <figure class="mock" aria-label="Illustration of the MASS participation map: per-student timelines with color-coded activity segments">
-          <div class="mock__bar">
-            <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
-            <span class="mock__title">PARTICIPATION MAP — Classroom Session 04</span>
+        <!-- Rotating product showcase: participation map / labeler / Atlas -->
+        <div class="hero-showcase">
+          <div class="hero-mocks">
+
+            <figure class="mock is-active" data-mock="map" aria-label="Illustration of the MASS participation map: per-student timelines with color-coded activity segments">
+              <div class="mock__bar">
+                <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+                <span class="mock__title">PARTICIPATION MAP — Classroom Session 04</span>
+              </div>
+              <div class="mock__body">
+                <div class="am-timeline">
+                  <div class="am-lane">
+                    <span class="am-lane__label">Student A</span>
+                    <div class="am-lane__track">
+                      <span class="am-seg" style="left:4%; width:22%"></span>
+                      <span class="am-seg--alt am-seg" style="left:30%; width:14%"></span>
+                      <span class="am-seg am-seg--soft" style="left:50%; width:30%"></span>
+                    </div>
+                  </div>
+                  <div class="am-lane">
+                    <span class="am-lane__label">Student B</span>
+                    <div class="am-lane__track">
+                      <span class="am-seg am-seg--soft" style="left:8%; width:16%"></span>
+                      <span class="am-seg" style="left:28%; width:34%"></span>
+                      <span class="am-seg--alt am-seg" style="left:68%; width:18%"></span>
+                    </div>
+                  </div>
+                  <div class="am-lane">
+                    <span class="am-lane__label">Student C</span>
+                    <div class="am-lane__track">
+                      <span class="am-seg--alt am-seg" style="left:6%; width:10%"></span>
+                      <span class="am-seg am-seg--soft2" style="left:22%; width:26%"></span>
+                      <span class="am-seg" style="left:54%; width:32%"></span>
+                    </div>
+                  </div>
+                  <div class="am-lane">
+                    <span class="am-lane__label">Group work</span>
+                    <div class="am-lane__track">
+                      <span class="am-seg" style="left:30%; width:42%"></span>
+                    </div>
+                  </div>
+                  <span class="am-playhead" aria-hidden="true"></span>
+                </div>
+                <div class="am-axis"><span>00:00</span><span>10:00</span><span>20:00</span><span>30:00</span></div>
+              </div>
+            </figure>
+
+            <figure class="mock" data-mock="labeler" aria-label="Illustration of the labeler: a video frame with tracked bounding boxes and a keyframe timeline">
+              <div class="mock__bar">
+                <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+                <span class="mock__title">LABELER — session_04.mp4 · pass: group-work</span>
+              </div>
+              <div class="mock__body">
+                <div class="lb-frame">
+                  <div class="lb-box" style="left: 12%; top: 34%; width: 26%; height: 44%;">
+                    <span class="lb-box__tag">Student A · on-task</span>
+                  </div>
+                  <div class="lb-box lb-box--alt" style="left: 55%; top: 28%; width: 30%; height: 52%;">
+                    <span class="lb-box__tag">Student B · discussing</span>
+                  </div>
+                </div>
+                <div class="lb-timeline">
+                  <span class="lb-key" style="left: 10%"></span>
+                  <span class="lb-key" style="left: 34%"></span>
+                  <span class="lb-key" style="left: 58%"></span>
+                  <span class="lb-key lb-key--alt" style="left: 22%"></span>
+                  <span class="lb-key lb-key--alt" style="left: 72%"></span>
+                  <span class="lb-key lb-key--alt" style="left: 90%"></span>
+                </div>
+              </div>
+            </figure>
+
+            <figure class="mock" data-mock="atlas" aria-label="Illustration of a conversation with the Atlas agent">
+              <div class="mock__bar">
+                <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+                <span class="mock__title">ATLAS</span>
+              </div>
+              <div class="mock__body chat">
+                <div class="chat__msg chat__msg--user">
+                  Find every segment in this week's recordings where students are working in groups.
+                </div>
+                <div class="chat__msg chat__msg--agent">
+                  I analyzed 12 videos in <strong>Dataset: Week 14</strong> and found 47 candidate segments
+                  of group work. I'd like to create an annotation pass called <strong>"group-work"</strong>
+                  so you can review them in the labeler.
+                </div>
+                <div class="chat__approval">
+                  <span>Create annotation pass "group-work"?</span>
+                  <button class="btn btn--primary" type="button">Approve</button>
+                </div>
+              </div>
+            </figure>
+
           </div>
-          <div class="mock__body">
-            <div class="am-timeline">
-              <div class="am-lane">
-                <span class="am-lane__label">Student A</span>
-                <div class="am-lane__track">
-                  <span class="am-seg" style="left:4%; width:22%"></span>
-                  <span class="am-seg--alt am-seg" style="left:30%; width:14%"></span>
-                  <span class="am-seg am-seg--soft" style="left:50%; width:30%"></span>
-                </div>
-              </div>
-              <div class="am-lane">
-                <span class="am-lane__label">Student B</span>
-                <div class="am-lane__track">
-                  <span class="am-seg am-seg--soft" style="left:8%; width:16%"></span>
-                  <span class="am-seg" style="left:28%; width:34%"></span>
-                  <span class="am-seg--alt am-seg" style="left:68%; width:18%"></span>
-                </div>
-              </div>
-              <div class="am-lane">
-                <span class="am-lane__label">Student C</span>
-                <div class="am-lane__track">
-                  <span class="am-seg--alt am-seg" style="left:6%; width:10%"></span>
-                  <span class="am-seg am-seg--soft2" style="left:22%; width:26%"></span>
-                  <span class="am-seg" style="left:54%; width:32%"></span>
-                </div>
-              </div>
-              <div class="am-lane">
-                <span class="am-lane__label">Group work</span>
-                <div class="am-lane__track">
-                  <span class="am-seg" style="left:30%; width:42%"></span>
-                </div>
-              </div>
-              <span class="am-playhead" aria-hidden="true"></span>
-            </div>
-            <div class="am-axis"><span>00:00</span><span>10:00</span><span>20:00</span><span>30:00</span></div>
+          <div class="hero-tabs" role="tablist" aria-label="Product views">
+            <button class="hero-tab is-active" type="button" data-target="map" aria-selected="true">Participation Map</button>
+            <button class="hero-tab" type="button" data-target="labeler" aria-selected="false">Labeler</button>
+            <button class="hero-tab" type="button" data-target="atlas" aria-selected="false">Atlas</button>
           </div>
-        </figure>
+        </div>
       </div>
     </section>
 
@@ -186,7 +244,7 @@
         </div>
         <div class="grid grid--2">
           <ul class="checklist">
-            <li>Track individual students across a session: engagement, time-on-task, collaboration</li>
+            <li>See how participation unfolds across a session: engagement, collaboration, discussion</li>
             <li>Code group work, teacher-student interaction, and transitions between activities</li>
             <li>Built-in review workflow mirrors second-coder practice: submit, request changes, approve</li>
           </ul>
@@ -247,8 +305,10 @@
       <nav>
         <a href="features.html">Features</a>
         <a href="use-cases.html">Use Cases</a>
+        <a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <p class="site-footer__note">This work is supported by the UVA School of Education and Human Development IDEAs Awards through the project “Multimodal STEM+AI Classrooms: A Sociocultural Inquiry into Participatory Design for Collaborative Learning” (PI Hakeoung Hannah Lee, University of Virginia).</p>
     </div>
   </footer>
 

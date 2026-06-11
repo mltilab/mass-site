@@ -54,6 +54,53 @@
     });
   }
 
+  /* ----- hero showcase: rotate between product mocks ----- */
+  var showcase = document.querySelector(".hero-showcase");
+  if (showcase) {
+    var mocks = showcase.querySelectorAll(".hero-mocks .mock");
+    var tabs = showcase.querySelectorAll(".hero-tab");
+    var order = ["map", "labeler", "atlas"];
+    var current = 0;
+    var ROTATE_MS = 6000;
+    var timer = null;
+    var reducedMotion =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var show = function (key) {
+      current = order.indexOf(key);
+      mocks.forEach(function (m) {
+        m.classList.toggle("is-active", m.getAttribute("data-mock") === key);
+      });
+      tabs.forEach(function (t) {
+        var active = t.getAttribute("data-target") === key;
+        t.classList.toggle("is-active", active);
+        t.setAttribute("aria-selected", active ? "true" : "false");
+      });
+    };
+    var startRotation = function () {
+      if (reducedMotion || timer) return;
+      timer = setInterval(function () {
+        show(order[(current + 1) % order.length]);
+      }, ROTATE_MS);
+    };
+    var stopRotation = function () {
+      if (timer) clearInterval(timer);
+      timer = null;
+    };
+
+    tabs.forEach(function (t) {
+      t.addEventListener("click", function () {
+        stopRotation();
+        show(t.getAttribute("data-target"));
+        startRotation();
+      });
+    });
+    showcase.addEventListener("mouseenter", stopRotation);
+    showcase.addEventListener("mouseleave", startRotation);
+    startRotation();
+  }
+
   /* ----- contact form (prototype: no backend yet) ----- */
   var form = document.querySelector("#contact-form");
   if (form) {
@@ -62,7 +109,7 @@
       var status = form.querySelector(".form__status");
       if (status) {
         status.textContent =
-          "Thanks — this prototype isn't wired to a backend yet, but your interest is noted!";
+          "Thanks! This prototype isn't wired to a backend yet, but your interest is noted.";
       }
       form.reset();
     });

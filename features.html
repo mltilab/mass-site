@@ -14,7 +14,7 @@
     (function () {
       try {
         var t = localStorage.getItem("mass-theme");
-        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (!t) t = "light";
         document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
     })();
@@ -33,6 +33,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="features.html" class="is-active">Features</a></li>
         <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav__actions">
@@ -64,17 +65,17 @@
       <article class="feature-row" id="atlas">
         <div>
           <span class="eyebrow">Agent-guided workflows</span>
-          <h2>Atlas: an AI agent that runs the workflow with you</h2>
+          <h2>Atlas: An AI agent that runs the workflow with you</h2>
           <p>
             Atlas is a conversational assistant built into MASS. Instead of clicking through menus,
             you tell it what you're trying to do, and it does the setup, organization, and first-pass
             analysis for you.
           </p>
           <ul class="checklist">
-            <li><strong>Analyzes video for you</strong>: describe the activities you care about ("students raising hands", "group discussion") and Atlas scans the footage and proposes a full annotation pass</li>
-            <li><strong>Manages your workspace</strong>: creates projects and datasets, attaches files, and keeps your study organized through plain conversation</li>
-            <li><strong>Never acts without you</strong>: anything that creates or changes data is approval-gated; Atlas proposes, you confirm</li>
-            <li><strong>Fully auditable</strong>: every action the agent takes is logged, so your methodology stays defensible</li>
+            <li><strong>Analyzes video for you</strong>: Describe the activities you care about ("students raising hands", "group discussion") and Atlas scans the footage and proposes a full annotation pass</li>
+            <li><strong>Manages your workspace</strong>: Creates projects and datasets, attaches files, and keeps your study organized through plain conversation</li>
+            <li><strong>Never acts without you</strong>: Anything that creates or changes data is approval-gated; Atlas proposes, you confirm</li>
+            <li><strong>Fully auditable</strong>: Every action the agent takes is logged, so your methodology stays defensible</li>
           </ul>
         </div>
         <figure class="feature-row__media mock" aria-label="Illustration of a conversation with the Atlas agent">
@@ -103,17 +104,17 @@
       <article class="feature-row feature-row--flip" id="labeler">
         <div>
           <span class="eyebrow eyebrow--alt">Annotation</span>
-          <h2>The Labeler: capture exactly what's happening</h2>
+          <h2>The Labeler: Capture exactly what's happening</h2>
           <p>
             The labeler is where observation becomes data. Annotate any subject in the frame and
             track them across the whole video: precisely, quickly, and together with your team.
           </p>
           <ul class="checklist">
-            <li><strong>Bounding boxes with keyframes</strong>: mark a subject at a few moments and MASS interpolates their position between them</li>
-            <li><strong>AI click-to-segment</strong>: click a subject once and get a pixel-accurate outline that tracks them through the video, refined with simple include/exclude clicks</li>
-            <li><strong>Multi-subject, multi-pass</strong>: code several students and several behavior categories in the same session, in separate organized passes</li>
-            <li><strong>True team coding</strong>: colleagues annotate the same video simultaneously; per-subject locks and automatic merging keep everyone's work intact</li>
-            <li><strong>Review workflow built in</strong>: labelers submit work for review; reviewers approve or request changes with notes, just like second-coder practice</li>
+            <li><strong>Bounding boxes with keyframes</strong>: Mark a subject at a few moments and MASS interpolates their position between them</li>
+            <li><strong>AI click-to-segment</strong>: Click a subject once and get a pixel-accurate outline that tracks them through the video, refined with simple include/exclude clicks</li>
+            <li><strong>Multi-subject, multi-pass</strong>: Code several students and several behavior categories in the same session, in separate organized passes</li>
+            <li><strong>True team coding</strong>: Colleagues annotate the same video simultaneously; per-subject locks and automatic merging keep everyone's work intact</li>
+            <li><strong>Review workflow built in</strong>: Labelers submit work for review; reviewers approve or request changes with notes, just like second-coder practice</li>
           </ul>
         </div>
         <figure class="feature-row__media mock" aria-label="Illustration of the labeler: a video frame with tracked bounding boxes and a keyframe timeline">
@@ -146,17 +147,17 @@
       <article class="feature-row" id="participation-map">
         <div>
           <span class="eyebrow">Visualization</span>
-          <h2>The Participation Map: see the whole session at once</h2>
+          <h2>The Participation Map: See the whole session at once</h2>
           <p>
             Every annotation becomes a colored segment on an interactive, frame-accurate timeline.
             What took hours of footage to record takes seconds to read.
           </p>
           <ul class="checklist">
-            <li><strong>Group your view</strong>: lanes by student, by activity, or by coding pass; the same data, three perspectives</li>
-            <li><strong>Filter to the question</strong>: narrow to specific subjects, activities, or tags and the timeline updates live</li>
-            <li><strong>Linked to the video</strong>: click a segment to jump straight to that moment; the playhead tracks playback on the map</li>
-            <li><strong>Saved views &amp; sharing</strong>: save a filter-and-grouping setup as a named view, and share a read-only link with collaborators or stakeholders</li>
-            <li><strong>Notes where they belong</strong>: attach observations to specific segments instead of a separate document</li>
+            <li><strong>Group your view</strong>: Lanes by student, by activity, or by coding pass; the same data, three perspectives</li>
+            <li><strong>Filter to the question</strong>: Narrow to specific subjects, activities, or tags and the timeline updates live</li>
+            <li><strong>Linked to the video</strong>: Click a segment to jump straight to that moment; the playhead tracks playback on the map</li>
+            <li><strong>Saved views &amp; sharing</strong>: Save a filter-and-grouping setup as a named view, and share a read-only link with collaborators or stakeholders</li>
+            <li><strong>Notes where they belong</strong>: Attach observations to specific segments instead of a separate document</li>
           </ul>
         </div>
         <figure class="feature-row__media mock" aria-label="Illustration of the participation map grouped by activity">
@@ -191,7 +192,7 @@
                 </div>
               </div>
               <div class="am-lane">
-                <span class="am-lane__label">Off-task</span>
+                <span class="am-lane__label">Transitions</span>
                 <div class="am-lane__track">
                   <span class="am-seg am-seg--soft" style="left:34%; width:8%"></span>
                   <span class="am-seg am-seg--soft" style="left:70%; width:6%"></span>
@@ -215,10 +216,10 @@
           </p>
           <ul class="checklist">
             <li><strong>Roles that match your team</strong>: Viewers, Editors, Reviewers, and Managers per dataset; invite collaborators with exactly the access they need</li>
-            <li><strong>Conflict-free co-editing</strong>: subject-level locks mean two coders never silently overwrite each other; everyone's edits merge in real time</li>
-            <li><strong>Checkpointed history</strong>: committing annotations snapshots a revision while leaving the draft open, so you always know which version a finding came from</li>
-            <li><strong>Notifications that keep work moving</strong>: reviewers and labelers are notified in-app and by email when something needs their attention</li>
-            <li><strong>Secure by design</strong>: scoped authentication, per-resource permission checks, and audited AI actions throughout the platform</li>
+            <li><strong>Conflict-free co-editing</strong>: Subject-level locks mean two coders never silently overwrite each other; everyone's edits merge in real time</li>
+            <li><strong>Checkpointed history</strong>: Committing annotations snapshots a revision while leaving the draft open, so you always know which version a finding came from</li>
+            <li><strong>Notifications that keep work moving</strong>: Reviewers and labelers are notified in-app and by email when something needs their attention</li>
+            <li><strong>Secure by design</strong>: Scoped authentication, per-resource permission checks, and audited AI actions throughout the platform</li>
           </ul>
         </div>
         <div class="feature-row__media">
@@ -258,8 +259,10 @@
       <nav>
         <a href="features.html">Features</a>
         <a href="use-cases.html">Use Cases</a>
+        <a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <p class="site-footer__note">This work is supported by the UVA School of Education and Human Development IDEAs Awards through the project “Multimodal STEM+AI Classrooms: A Sociocultural Inquiry into Participatory Design for Collaborative Learning” (PI Hakeoung Hannah Lee, University of Virginia).</p>
     </div>
   </footer>
 

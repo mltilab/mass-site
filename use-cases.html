@@ -14,7 +14,7 @@
     (function () {
       try {
         var t = localStorage.getItem("mass-theme");
-        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (!t) t = "light";
         document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
     })();
@@ -33,6 +33,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="features.html">Features</a></li>
         <li><a href="use-cases.html" class="is-active">Use Cases</a></li>
+        <li><a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav__actions">
@@ -51,9 +52,10 @@
         <span class="eyebrow">Use cases</span>
         <h1>Where MASS makes a difference</h1>
         <p>
-          We started with education research because that's where the gap between
-          "hours of video" and "usable findings" hurts the most. But the workflow
-          generalizes: if activity happens on camera, MASS can turn it into data.
+          We started with education research because that's where video is richest,
+          yet so slow to turn into findings. Hours of classroom footage can mean weeks
+          of manual coding. MASS was built to change that.
+          And the workflow generalizes: if activity happens on camera, MASS can turn it into data.
         </p>
       </div>
     </section>
@@ -63,7 +65,7 @@
       <div class="container uc-primary">
         <div>
           <span class="eyebrow eyebrow--alt">Primary focus</span>
-          <h2>Education research: insight into how students learn</h2>
+          <h2>Education research: Insight into how students learn</h2>
           <p class="muted">
             Classroom video captures everything: engagement, collaboration, confusion,
             breakthroughs. The problem has never been the data; it's the weeks of manual
@@ -71,12 +73,17 @@
             compromising rigor.
           </p>
           <ul class="checklist">
-            <li><strong>Engagement &amp; time-on-task</strong>: track each student through a session and quantify when they're focused, distracted, or transitioning</li>
-            <li><strong>Group-work dynamics</strong>: code who collaborates with whom, when discussion starts, and how roles shift within groups</li>
-            <li><strong>Teacher-student interaction</strong>: capture questioning patterns, one-on-one support moments, and whole-class facilitation</li>
-            <li><strong>Cross-session comparison</strong>: line up the same activity codes across classrooms, conditions, or points in the semester</li>
-            <li><strong>Methodological rigor</strong>: the review workflow mirrors second-coder practice, and every AI suggestion is human-approved and audit-logged</li>
+            <li><strong>Engagement &amp; participation</strong>: Understand how engagement unfolds across a session and how students move between individual work, discussion, and group activities</li>
+            <li><strong>Group-work dynamics</strong>: Code who collaborates with whom, when discussion starts, and how roles shift within groups</li>
+            <li><strong>Teacher-student interaction</strong>: Capture questioning patterns, one-on-one support moments, and whole-class facilitation</li>
+            <li><strong>Cross-session comparison</strong>: Line up the same activity codes across classrooms, conditions, or points in the semester</li>
+            <li><strong>Methodological rigor</strong>: The review workflow mirrors second-coder practice, and every AI suggestion is human-approved and audit-logged</li>
           </ul>
+          <p class="muted" style="margin-top: 20px;">
+            MASS grows out of ongoing learning-sciences research at the MLTI Lab.
+            <a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Explore the research behind MASS</a>, from the studies that shaped the tool to published work.
+          </p>
+          <a class="btn btn--outline" href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener" style="margin-top: 4px;">Read the publications</a>
         </div>
         <figure class="mock" aria-label="Illustration of a per-student engagement timeline">
           <div class="mock__bar">
@@ -207,8 +214,10 @@
       <nav>
         <a href="features.html">Features</a>
         <a href="use-cases.html">Use Cases</a>
+        <a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <p class="site-footer__note">This work is supported by the UVA School of Education and Human Development IDEAs Awards through the project “Multimodal STEM+AI Classrooms: A Sociocultural Inquiry into Participatory Design for Collaborative Learning” (PI Hakeoung Hannah Lee, University of Virginia).</p>
     </div>
   </footer>
 

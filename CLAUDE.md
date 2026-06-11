@@ -16,6 +16,8 @@ The three product pillars — keep marketing copy grounded in these real capabil
 
 Supporting facts usable in copy: dataset roles (Viewer/Editor/Reviewer/Manager), email + in-app notifications for review handoffs, scoped auth + per-resource permissions.
 
+**Copy tone — never frame MASS as monitoring or surveilling students.** Avoid phrasing like "track each student", "quantify when they're focused/distracted", or judgmental coding labels ("off-task") in marketing copy and mockups. Frame everything as understanding participation and learning. (Describing the labeler's technical subject-tracking is fine; aiming that language at students is not.)
+
 Brand: **"MASS" is the product name, not an acronym** (no expansion exists). Tagline *"See how learning happens."* is a draft — fine to iterate. Positioning order: education research first, "beyond education" second.
 
 ## Files
@@ -39,7 +41,7 @@ Brand: **"MASS" is the product name, not an acronym** (no expansion exists). Tag
 - Fonts: **Poppins** headings, **Inter** body, **Chakra Petch** for the MASS wordmark in the header (Google Fonts `<link>` in each page head)
 - Radii 4/8/12px. **Never hardcode colors in markup or new rules — use the variables.** Dark mode works by `[data-theme="dark"]` overriding the variables, so any hardcoded hex breaks one of the two modes.
 
-**Theme toggle** — `data-theme` on `<html>`, persisted to `localStorage` key `mass-theme`, defaults to `prefers-color-scheme`. Each page has an **inline script in `<head>`** setting the attribute before first paint (FOUC guard). If you add a page, copy that script verbatim.
+**Theme toggle** — `data-theme` on `<html>`, persisted to `localStorage` key `mass-theme`, defaults to light (system preference is ignored). Each page has an **inline script in `<head>`** setting the attribute before first paint (FOUC guard). If you add a page, copy that script verbatim.
 
 **Shared chrome is duplicated, not templated.** Header/nav and footer are copy-pasted into every page (no includes — that's the price of zero build). When changing nav/footer, **update all four pages** and keep the `is-active` class on the current page's nav link. Same for adding a page: copy an existing page's `<head>`, header, and footer wholesale.
 
