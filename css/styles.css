@@ -87,6 +87,7 @@ img, svg { max-width: 100%; }
 }
 
 .muted { color: var(--text-muted); }
+.form__email { margin-top: 14px; cursor: text; user-select: all; }
 
 .eyebrow {
   display: inline-block;
