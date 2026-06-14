@@ -24,23 +24,23 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="nav__brand" href="index.html">
+      <a class="nav__brand" href="/">
         <img src="assets/logo.svg" alt="" width="28" height="28" />
         <span class="nav__brand-text">MASS<small>Multimodal Analytics Support Studio</small></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="features.html">Features</a></li>
-        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="features">Features</a></li>
+        <li><a href="use-cases">Use Cases</a></li>
         <li><a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a></li>
-        <li><a href="contact.html" class="is-active">Contact</a></li>
+        <li><a href="contact" class="is-active">Contact</a></li>
       </ul>
       <div class="nav__actions">
         <button class="theme-toggle" aria-label="Toggle dark mode">
           <span class="icon-moon"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><span class="icon-sun"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
         </button>
-        <a class="btn btn--primary btn--small" href="contact.html">Request a demo</a>
+        <a class="btn btn--primary btn--small" href="contact">Request a demo</a>
       </div>
     </div>
   </header>
@@ -80,8 +80,43 @@
           <p class="muted">Reach the team directly at <a href="mailto:mlti.lab25@gmail.com">mlti.lab25@gmail.com</a>.</p>
         </div>
 
-        <form class="form" id="contact-form">
+        <!-- Email-only contact for now. The full demo-request form is preserved (disabled) below;
+             re-enable it once there's a host that can run the /api/contact verifier or a form service. -->
+        <div class="form">
           <h3 style="margin: 0;">Request a demo</h3>
+          <p>
+            We're partnering with early research teams now. To set up a walkthrough on footage
+            like yours, email us directly — we read every message and reply personally.
+          </p>
+          <a class="btn btn--primary" href="mailto:mlti.lab25@gmail.com?subject=MASS%20demo%20request">Email us to request a demo</a>
+        </div>
+
+        <!--
+          ============================================================
+          DEMO-REQUEST FORM — TEMPORARILY DISABLED (no form backend host).
+          We dropped Vercel, so /api/contact (the Turnstile verifier in
+          api/contact.js) is not deployed and the form has nowhere to post.
+
+          To restore: pick a host that can run the serverless function (or a
+          form service), delete the email-only CTA above, and uncomment the
+          form below. The keys below are public/safe; the Turnstile SECRET
+          key still lives only in the host's env, never in this file.
+
+          (NOTE: the three developer hint-comments inside the original form
+          were converted to plain text here so this block is a single valid
+          HTML comment — HTML comments can't nest.)
+          ============================================================
+
+        <form class="form" id="contact-form" action="/api/contact" method="POST">
+          <h3 style="margin: 0;">Request a demo</h3>
+
+          Web3Forms access key (public, safe to expose — only routes to the inbox, can't read submissions):
+          <input type="hidden" name="access_key" value="244a921c-f9bb-478e-9cc2-16eb3fc01ef2" />
+          <input type="hidden" name="subject" value="New MASS demo request" />
+          <input type="hidden" name="from_name" value="MASS site contact form" />
+          Honeypot: hidden from people; bots auto-fill it and the submission is rejected.
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none" aria-hidden="true" />
+
           <label>
             Name
             <input type="text" name="name" placeholder="Dr. Jane Rivera" required />
@@ -108,9 +143,14 @@
             Tell us about your study
             <textarea name="message" placeholder="What are you recording, what are you trying to learn, and what does analysis look like for you today?"></textarea>
           </label>
+          Cloudflare Turnstile SITE key (public). The SECRET key goes in the host's env, never here.
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADknmJk6VyW7QX-5"></div>
+
           <button class="btn btn--primary" type="submit">Send request</button>
           <p class="form__status" role="status" aria-live="polite"></p>
         </form>
+          ============================================================
+        -->
 
       </div>
     </section>
@@ -121,15 +161,18 @@
     <div class="container">
       <span>© <span id="year"></span> MASS · Multimodal Analytics Support Studio</span>
       <nav>
-        <a href="features.html">Features</a>
-        <a href="use-cases.html">Use Cases</a>
+        <a href="features">Features</a>
+        <a href="use-cases">Use Cases</a>
         <a href="https://www.mltilab.com/projects/mass" target="_blank" rel="noopener">Research</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact">Contact</a>
       </nav>
       <p class="site-footer__note">This work is supported by the UVA School of Education and Human Development IDEAs Awards through the project “<a href="https://www.mltilab.com/projects" target="_blank" rel="noopener">Multimodal STEM+AI Classrooms: A Sociocultural Inquiry into Participatory Design for Collaborative Learning</a>” (PI Hakeoung Hannah Lee, University of Virginia).</p>
     </div>
   </footer>
 
+  <!-- Turnstile script disabled with the demo-request form. Re-enable when the form comes back.
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  -->
   <script src="js/main.js"></script>
 </body>
 </html>

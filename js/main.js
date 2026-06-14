@@ -101,17 +101,53 @@
     startRotation();
   }
 
-  /* ----- contact form (prototype: no backend yet) ----- */
+  /* ----- contact form (Web3Forms + Cloudflare Turnstile) ----- */
   var form = document.querySelector("#contact-form");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var status = form.querySelector(".form__status");
-      if (status) {
-        status.textContent =
-          "Thanks! This prototype isn't wired to a backend yet, but your interest is noted.";
-      }
-      form.reset();
+      var button = form.querySelector("button[type='submit']");
+
+      // Honeypot: real people never see/check this; bots that fill it get silently dropped.
+      var honeypot = form.querySelector("[name='botcheck']");
+      if (honeypot && honeypot.checked) return;
+
+      var data = Object.fromEntries(new FormData(form).entries());
+
+      if (status) status.textContent = "Sending…";
+      if (button) button.disabled = true;
+
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      })
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (json) {
+          if (json.success) {
+            if (status)
+              status.textContent =
+                "Thanks! Your request is on its way — we'll be in touch soon.";
+            form.reset();
+          } else {
+            if (status)
+              status.textContent =
+                "Something went wrong. Please email us at mlti.lab25@gmail.com.";
+          }
+        })
+        .catch(function () {
+          if (status)
+            status.textContent =
+              "Network error — please email us at mlti.lab25@gmail.com.";
+        })
+        .then(function () {
+          if (button) button.disabled = false;
+          // Reset Turnstile so a second submission gets a fresh token.
+          if (window.turnstile) window.turnstile.reset();
+        });
     });
   }
 
